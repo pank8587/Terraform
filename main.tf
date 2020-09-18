@@ -1,6 +1,6 @@
 provider "google" {
   credentials = file("terraform-keyfile.json")
-  project     = "{{ox-sigmoid-prod}}"
+  project     = "{{}}"
   region      = "us-central1"
   zone        = "us-central1-c"
 }
@@ -18,7 +18,7 @@ resource "google_compute_instance" "vm_instance" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network = "sigmoid-openx"
+    network = ""
     access_config {
     }
   }
